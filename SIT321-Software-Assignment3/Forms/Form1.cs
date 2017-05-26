@@ -26,5 +26,10 @@ namespace SIT321_Software_Assignment3
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
