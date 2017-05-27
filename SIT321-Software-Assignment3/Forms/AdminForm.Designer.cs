@@ -1,6 +1,7 @@
 ﻿namespace SIT321_Software_Assignment3.Forms
 {
-    partial class AdminForm
+    partial class 
+        Form
     {
         /// <summary> 
         /// Required designer variable.

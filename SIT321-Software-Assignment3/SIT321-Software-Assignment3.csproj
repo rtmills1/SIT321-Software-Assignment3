@@ -46,11 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Exceptions\CatalogueException.cs" />
     <Compile Include="Exceptions\DeleteCurrentUserException.cs" />
     <Compile Include="Exceptions\EasyLibraryException.cs" />
     <Compile Include="Exceptions\InvalidLoginException.cs" />
-    <Compile Include="Exceptions\ItemExistsException.cs" />
     <Compile Include="Exceptions\UserDBException.cs" />
     <Compile Include="Exceptions\UserDBIOException.cs" />
     <Compile Include="Exceptions\UserExistsException.cs" />

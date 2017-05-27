@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using SIT321_Software_Assignment3.Users;
 using SIT321_Software_Assignment3.Exceptions;
+using SIT321_Software_Assignment3.Subsystems;
 
 namespace SIT321_Software_Assignment3
 {
@@ -26,49 +27,7 @@ namespace SIT321_Software_Assignment3
 
         private static string _LoginTerminator = "exit";
         #endregion
-        #region Login Management
-        private static User GetLogin()
-        {
-            string login;
-            string pass;
-            ConsoleKeyInfo cki;
-            User ret = null;
-            do
-            {
-                try
-                {
-                    foreach (string s in _LoginBanner)
-                        Console.WriteLine(s);
 
-                    Console.Write("login: ");
-                    login = Console.ReadLine();
-                    if (login.ToLower() == _LoginTerminator.ToLower())
-                        break;
-                    Console.Write("password: ");
-                    pass = "";
-                    while ((cki = Console.ReadKey(true)) != null)
-                    {
-                        if (cki.Key == ConsoleKey.Enter)
-                        {
-                            Console.WriteLine();
-                            break;
-                        }
-                        else
-                            pass += cki.KeyChar;
-                    }
-                    if ((ret = UserManager.ValidateLogin(login, pass)) == null)
-                        Console.Error.WriteLine("Invalid login.");
-                }
-                catch (SIT321_Software_Assignment3.Exceptions.EasyLibraryException ex)
-                {
-                    Console.Error.WriteLine("Error: {0}", ex.Message);
-                }
-                Console.WriteLine();
-            } while (ret == null);
-
-            return ret;
-        }
-        #endregion
 
         /// <summary>
         /// The main entry point for the application.
@@ -101,14 +60,6 @@ namespace SIT321_Software_Assignment3
 
             if (dbExists)
             {
-                User user;
-                while ((user = GetLogin()) != null)
-                {
-                    List<SIT321_Software_Assignment3.Menus.MenuOption> menu = SIT321_Software_Assignment3.Menus.MenuSystem.GetMenu(user);
-                    SIT321_Software_Assignment3.Menus.MenuSystem.RunMenu(user, menu);
-                    Console.WriteLine("\nLife is pain");
-                }
-
                 UserManager.SaveDB(pwFile);
             }
         }
