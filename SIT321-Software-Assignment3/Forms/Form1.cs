@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SIT321_Software_Assignment3.Users;
 using SIT321_Software_Assignment3.Exceptions;
+using System.IO;
+using System.Reflection;
 
 namespace SIT321_Software_Assignment3
 {
     public partial class Form1 : Form
     {
+        #region Configuration
+        private const string _PASSWORDS_FILENAME = "Users.bin";
+        #endregion
+
         public Form1()
         {
             InitializeComponent();
@@ -36,44 +42,37 @@ namespace SIT321_Software_Assignment3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string login = textBox1.Text;
-            string pass = textBox2.Text;
+            string pwFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\" + _PASSWORDS_FILENAME;
+            bool dbExists = false;
 
-            GetLogin(textBox1.Text, textBox2.Text);
+                UserManager.LoadDB(pwFile);
+                dbExists = true;
 
+            
+            if (dbExists)
+            {
+                User user;
+                while ((user = GetLogin(textBox1.Text, textBox2.Text)) != null)
+                {
+                    List<SIT321_Software_Assignment3.Menus.MenuOption> menu = SIT321_Software_Assignment3.Menus.MenuSystem.GetMenu(user);
+                    SIT321_Software_Assignment3.Menus.MenuSystem.RunMenu(user, menu);
+                    Console.WriteLine("\nThank you for using EasyLibrary");
+                }
 
+                UserManager.SaveDB(pwFile);
+            }
         }
 
         public static User GetLogin(string login, string pass)
         {
-            ConsoleKeyInfo cki;
-            User ret = null;
-            do
-            {
-                try
-                {
-                    while ((cki = Console.ReadKey(true)) != null)
-                    {
-                        if (cki.Key == ConsoleKey.Enter)
-                        {
-                            Console.WriteLine();
-                            break;
-                        }
-                        else
-                            pass += cki.KeyChar;
-                    }
-                    if ((ret = UserManager.ValidateLogin(login, pass)) == null)
-                        Console.Error.WriteLine("Invalid login.");
-                }
-                catch (SIT321_Software_Assignment3.Exceptions.EasyLibraryException ex)
-                {
-                    Console.Error.WriteLine("Error: {0}", ex.Message);
-                }
-            } while (ret == null);
+            User u;
 
-            return ret;
-        }
-       
+            if ((u = UserManager.ValidateLogin(login, pass)) == null)
+                MessageBox.Show("Invalid login.");
 
+
+            return u;
         }
+
+    }
 }
