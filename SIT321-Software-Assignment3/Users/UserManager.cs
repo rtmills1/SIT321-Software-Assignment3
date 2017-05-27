@@ -73,7 +73,7 @@ namespace SIT321_Software_Assignment3.Users
             }
             catch(Exception e)
             {
-                throw new UserDBIOException(UserDBIOException.DEFAULT_READ_MESSAGE, e);
+                
             }
         }
 

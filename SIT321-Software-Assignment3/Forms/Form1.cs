@@ -45,18 +45,26 @@ namespace SIT321_Software_Assignment3
             string pwFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\" + _PASSWORDS_FILENAME;
             bool dbExists = false;
 
+            try
+            {
                 UserManager.LoadDB(pwFile);
                 dbExists = true;
-
+            }
+            catch
+            {
+                MessageBox.Show("well thats bad");
+            }
             
+
+
             if (dbExists)
             {
+                UserManager.SeedDB();
                 User user;
                 while ((user = GetLogin(textBox1.Text, textBox2.Text)) != null)
                 {
                     List<SIT321_Software_Assignment3.Menus.MenuOption> menu = SIT321_Software_Assignment3.Menus.MenuSystem.GetMenu(user);
                     SIT321_Software_Assignment3.Menus.MenuSystem.RunMenu(user, menu);
-                    Console.WriteLine("\nThank you for using EasyLibrary");
                 }
 
                 UserManager.SaveDB(pwFile);
