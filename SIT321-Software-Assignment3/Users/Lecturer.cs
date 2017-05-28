@@ -24,12 +24,11 @@ namespace SIT321_Software_Assignment3.Users
         public Lecturer(string login, string password, string givenName, string familyName, string unit)
             : base(login, password, givenName, familyName)
         {
-            _Unit = unit;
         }
 
         public override string Title
         {
-            get { return "Staff Member"; }
+            get { return "Lecturer"; }
         }
 
         public override string GetDetail()

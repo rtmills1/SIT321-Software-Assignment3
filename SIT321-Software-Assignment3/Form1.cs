@@ -65,7 +65,10 @@ namespace SIT321_Software_Assignment3
             User u;
 
             if ((u = UserManager.ValidateLogin(login, pass)) == null)
+            {
                 MessageBox.Show("Invalid login.");
+                System.Environment.Exit(1);
+            }
 
 
             return u;

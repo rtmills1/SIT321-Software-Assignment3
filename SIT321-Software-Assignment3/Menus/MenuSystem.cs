@@ -206,7 +206,7 @@ namespace SIT321_Software_Assignment3.Menus
         private static void GetLecturerMenu()
         {
 
-            Form3 d = new Form3();
+            Form4 d = new Form4();
 
             d.Show();
         }
@@ -214,7 +214,7 @@ namespace SIT321_Software_Assignment3.Menus
         #region Student Main Menu
         private static void GetStudentMenu()
         {
-            Form4 d = new Form4();
+            Form3 d = new Form3();
 
             d.Show();
         }

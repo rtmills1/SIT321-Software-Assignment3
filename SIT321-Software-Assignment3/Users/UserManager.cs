@@ -81,6 +81,9 @@ namespace SIT321_Software_Assignment3.Users
         {
             _UserList = new List<User>();
             _UserList.Add(new Admin("admin", "admin", "Admin", "User"));
+            _UserList.Add(new Student("dastro", "pass", "Dave", "Astro"));
+            _UserList.Add(new Student("hgall", "pass", "Hayden", "Gallop"));
+            _UserList.Add(new Lecturer("ewill", "pass", "Emily", "Williams", "SIT325"));
         }
 
         public static void SaveDB(string fileName)
