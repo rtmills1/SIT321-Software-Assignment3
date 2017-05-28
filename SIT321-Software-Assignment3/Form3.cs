@@ -32,5 +32,10 @@ namespace SIT321_Software_Assignment3
             this.Hide();
             SIT321_Software_Assignment3.Menus.MenuSystem.loginOpen();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

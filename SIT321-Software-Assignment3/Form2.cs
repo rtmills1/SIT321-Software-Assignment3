@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SIT321_Software_Assignment3.Users;
+using SIT321_Software_Assignment3.Exceptions;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace SIT321_Software_Assignment3
@@ -17,7 +14,12 @@ namespace SIT321_Software_Assignment3
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1()
+        {
+
+        }
+
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
@@ -26,6 +28,34 @@ namespace SIT321_Software_Assignment3
         {
             this.Hide();
             SIT321_Software_Assignment3.Menus.MenuSystem.loginOpen();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+
+            User u;
+            string Firstname = u.FamilyName.ToString();
+
+            
+            //ListViewItem lvi = new ListViewItem("adsfafds");
+            //foreach (User u in UserManager.getusers())
+            //{
+            //    if (i == 0)
+            //    {
+            //        lvi = new ListViewItem(u.ToString());
+            //        i++;
+            //    }
+            //    else
+            //    lvi.SubItems.Add(u.ToString());
+
+
+                
+            //}
+
+            
+            listView1.Items.Add(lvi);
+
         }
     }
 }
