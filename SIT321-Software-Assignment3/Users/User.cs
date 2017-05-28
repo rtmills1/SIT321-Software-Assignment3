@@ -38,6 +38,13 @@ namespace SIT321_Software_Assignment3.Users
             set { _FamilyName = value; }
         }
 
+        [AutoPrompt("unit")]
+        private string _Unit;
+        public string unit
+        {
+            get { return _Unit; }
+            set { _Unit = value; }
+        }
 
 
         public abstract string Title { get; }
@@ -46,12 +53,13 @@ namespace SIT321_Software_Assignment3.Users
         {
         }
 
-        public User(string login, string password, string givenName, string familyName)
+        public User(string login, string password, string givenName, string familyName, string unit)
         {
             _Login = login;
             _Password = password;
             _GivenName = givenName;
             _FamilyName = familyName;
+            _Unit = unit; 
         }
 
         /*public User(string login, string password, string givenName, string familyName, string unit)

@@ -13,6 +13,7 @@ namespace SIT321_Software_Assignment3
         {
             InitializeComponent();
             preload();
+            preloadTwo();
         }
 
         public void dataGridView1()
@@ -59,27 +60,23 @@ namespace SIT321_Software_Assignment3
         public void preloadTwo()
         {
 
-            ListViewItem lvi = new ListViewItem("Garbage");
+            ListViewItem lvi2 = new ListViewItem("Garbage");
             foreach (User u in UserManager._UserList)
             {
                 if (u is Admin)
                 {
                 }
-                else if (u is Student)
+                else
                 {
-                    Student s = new Student(u.Login, u.Password, u.GivenName, u.FamilyName, u.);
-                }
-                {
-                lvi = new ListViewItem(u.Unit.ToString());
-                    Student s = new Student();
-                lvi.SubItems.Add(s.Unit.ToString());
-                lvi.SubItems.Add(u.FamilyName.ToString());
-                lvi.SubItems.Add(u.Login.ToString());
-                lvi.SubItems.Add(u.Password.ToString());
-                }
-                
+                    lvi2 = new ListViewItem(u.unit.ToString());
+                    lvi2.SubItems.Add(u.Title.ToString());
+                    lvi2.SubItems.Add(u.Login.ToString());
 
-                listView1.Items.Add(lvi);
+
+                    listView2.Items.Add(lvi2);
+                }
+    
+                
             }
 
         }

@@ -59,7 +59,7 @@ namespace SIT321_Software_Assignment3
 
             if (type == "Admin")
             {
-                UserManager._UserList.Add(new Admin(username, password, firstname, lastname));
+                UserManager._UserList.Add(new Admin(username, password, firstname, lastname, unit));
             }
             this.Hide();
             Form2 db = new Form2();

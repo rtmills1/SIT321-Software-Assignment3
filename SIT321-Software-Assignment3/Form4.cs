@@ -12,6 +12,7 @@ namespace SIT321_Software_Assignment3
         public Form4()
         {
             InitializeComponent();
+
         }
 
         public void Welcome(User user)
@@ -21,6 +22,22 @@ namespace SIT321_Software_Assignment3
             string lastName = user.FamilyName;
 
             label2.Text = String.Format("Welcome {0} {1}", firstName, lastName);
+
+
+            ListViewItem lvi = new ListViewItem("Garbage");
+            foreach (User u in UserManager._UserList)
+            {
+                if (u is Student)
+                {
+
+                    lvi = new ListViewItem(u.unit.ToString());
+
+                    lvi.SubItems.Add(u.Login.ToString());
+                    lvi.SubItems.Add(u.GivenName.ToString());
+
+                    listView1.Items.Add(lvi);
+                }
+            }
 
         }
 

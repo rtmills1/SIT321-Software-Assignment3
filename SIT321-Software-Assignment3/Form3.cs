@@ -22,10 +22,14 @@ namespace SIT321_Software_Assignment3
 
             string firstName = user.GivenName;
             string lastName = user.FamilyName;
+            string unit = user.unit;
 
             label2.Text = String.Format("Welcome {0} {1}", firstName, lastName);
 
+            label5.Text = String.Format(unit);
+            label6.Text = String.Format("HD");
         }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,6 +38,21 @@ namespace SIT321_Software_Assignment3
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
         {
 
         }

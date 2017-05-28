@@ -80,10 +80,10 @@ namespace SIT321_Software_Assignment3.Users
         public static void SeedDB()
         {
             _UserList = new List<User>();
-            _UserList.Add(new Admin("admin", "admin", "Admin", "User"));
+            _UserList.Add(new Admin("admin", "admin", "Admin", "User", ""));
             _UserList.Add(new Student("dastro", "pass", "Dave", "Astro", "SIT321"));
             _UserList.Add(new Student("hgall", "pass", "Hayden", "Gallop", "SIT325"));
-            _UserList.Add(new Lecturer("ewill", "pass", "Emily", "Williams", "SIT325"));
+            _UserList.Add(new Lecturer("ewill", "pass", "Emily", "Williams", "SIT323"));
             
         }
 
