@@ -17,6 +17,7 @@ namespace SIT321_Software_Assignment3
         [STAThread]
         static void Main(string[] arg)
         {
+            UserManager.SeedDB();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

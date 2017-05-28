@@ -38,6 +38,8 @@ namespace SIT321_Software_Assignment3.Users
             set { _FamilyName = value; }
         }
 
+
+
         public abstract string Title { get; }
 
         public User() // required for AutoPrompt
@@ -51,6 +53,14 @@ namespace SIT321_Software_Assignment3.Users
             _GivenName = givenName;
             _FamilyName = familyName;
         }
+
+        /*public User(string login, string password, string givenName, string familyName, string unit)
+        {
+            _Login = login;
+            _Password = password;
+            _GivenName = givenName;
+            _FamilyName = familyName;
+        }*/
 
         public abstract string GetDetail();
 

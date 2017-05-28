@@ -2,7 +2,7 @@ using SIT321_Software_Assignment3.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Windows.Forms;
 
 namespace SIT321_Software_Assignment3.Menus
 {
@@ -48,7 +48,7 @@ namespace SIT321_Software_Assignment3.Menus
                         // Do nothing
                         break;
                     default:
-                        Console.Error.WriteLine("Error: Invalid user type");
+                        MessageBox.Show("Error: Invalid user type");
                         break;
                 }
             }
@@ -122,6 +122,12 @@ namespace SIT321_Software_Assignment3.Menus
         }
         #endregion
         
+        public static void newUser()
+        {
+            NewUser d = new NewUser();
+
+            d.Show();
+        }
 
         #region Back to main Menu
         public static void loginOpen()

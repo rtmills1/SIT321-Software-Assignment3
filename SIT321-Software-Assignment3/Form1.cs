@@ -31,23 +31,23 @@ namespace SIT321_Software_Assignment3
         private void button1_Click(object sender, EventArgs e)
         {
             string pwFile = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + @"\" + _PASSWORDS_FILENAME;
-            bool dbExists = false;
+            bool dbExists = true;
 
-            try
-            {
-                UserManager.LoadDB(pwFile);
-                dbExists = true;
-            }
-            catch
-            {
-                MessageBox.Show("well thats bad");
-            }
+            //try
+            //{
+            //    UserManager.LoadDB(pwFile);
+            //    dbExists = true;
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("well thats bad");
+            //}
             
 
 
             if (dbExists)
             {
-                UserManager.SeedDB();
+
                 User user;
                 if ((user = GetLogin(textBox1.Text, textBox2.Text)) != null)
                 {
