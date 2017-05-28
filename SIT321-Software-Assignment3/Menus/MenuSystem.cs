@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+
 namespace SIT321_Software_Assignment3.Menus
 {
     public static class MenuSystem
@@ -189,55 +190,47 @@ namespace SIT321_Software_Assignment3.Menus
             result = new ExtendedResult(ResultCode.SubMenu, menu);
         }
         #endregion
+
+
+
         #region Administrator Main Menu
-        private static List<MenuOption> GetAdminMenu()
+        private static void GetAdminMenu()
         {
-            List<MenuOption> ret = new List<MenuOption>();
+            Form2 d = new Form2();
 
-            ret.Add(new MenuOption("U", "User Management", UserManagementMenu));
+            d.Show();
 
-            return ret;
         }
         #endregion
         #region Lecturer Main Menu
-        private static List<MenuOption> GetLecturerMenu()
+        private static void GetLecturerMenu()
         {
-            List<MenuOption> ret = new List<MenuOption>();
 
-            ret.Add(new MenuOption("U", "User Management", UserManagementMenu));
+            Form3 d = new Form3();
 
-            return ret;
+            d.Show();
         }
         #endregion
         #region Student Main Menu
-        private static List<MenuOption> GetStudentMenu()
+        private static void GetStudentMenu()
         {
-            List<MenuOption> ret = new List<MenuOption>();
+            Form4 d = new Form4();
 
-            ret.Add(new MenuOption("U", "User Management", UserManagementMenu));
-
-            return ret;
+            d.Show();
         }
         #endregion
 
         #region Default Main Menu
-        public static List<MenuOption> GetMenu(User u)
+
+        public static void GetMe(User u)
         {
-            List<MenuOption> ret;
-
             if (u is SIT321_Software_Assignment3.Users.Admin)
-                ret = GetAdminMenu();
+                GetAdminMenu();
             else if (u is SIT321_Software_Assignment3.Users.Lecturer)
-                ret = GetLecturerMenu();
+                GetLecturerMenu();
             else if (u is SIT321_Software_Assignment3.Users.Student)
-                ret = GetStudentMenu();
-            else
-                ret = new List<MenuOption>();
+                 GetStudentMenu();
 
-
-            ret.Add(new MenuOption("X", "Logout", LogoutHandler));
-
-            return ret;
         }
         #endregion
     }

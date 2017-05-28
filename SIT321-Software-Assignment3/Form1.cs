@@ -1,16 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using SIT321_Software_Assignment3.Users;
 using SIT321_Software_Assignment3.Exceptions;
 using System.IO;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SIT321_Software_Assignment3
 {
@@ -23,11 +16,6 @@ namespace SIT321_Software_Assignment3
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -61,11 +49,12 @@ namespace SIT321_Software_Assignment3
             {
                 UserManager.SeedDB();
                 User user;
-                while ((user = GetLogin(textBox1.Text, textBox2.Text)) != null)
+                if ((user = GetLogin(textBox1.Text, textBox2.Text)) != null)
                 {
-                    List<SIT321_Software_Assignment3.Menus.MenuOption> menu = SIT321_Software_Assignment3.Menus.MenuSystem.GetMenu(user);
-                    SIT321_Software_Assignment3.Menus.MenuSystem.RunMenu(user, menu);
+                    SIT321_Software_Assignment3.Menus.MenuSystem.GetMe(user);
                 }
+
+                this.Visible = false;
 
                 UserManager.SaveDB(pwFile);
             }
@@ -81,6 +70,5 @@ namespace SIT321_Software_Assignment3
 
             return u;
         }
-
     }
 }

@@ -1,24 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SIT321_Software_Assignment3.Forms
+namespace SIT321_Software_Assignment3
 {
-    public partial class 
-        
-        Form : UserControl
+    public partial class Form4 : Form
     {
-
-
-        private void tabPage1_Click(object sender, EventArgs e)
+        public Form4()
         {
-
+            InitializeComponent();
         }
     }
 }
