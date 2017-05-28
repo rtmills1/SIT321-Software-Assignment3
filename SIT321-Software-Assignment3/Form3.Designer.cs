@@ -29,23 +29,48 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Alerts = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
-            this.label1.Location = new System.Drawing.Point(-4, 98);
+            this.label1.Location = new System.Drawing.Point(188, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(306, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "This is the Student page";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
+            // Alerts
+            // 
+            this.Alerts.AccessibleName = "";
+            this.Alerts.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Alerts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.Alerts.FormattingEnabled = true;
+            this.Alerts.ItemHeight = 20;
+            this.Alerts.Location = new System.Drawing.Point(521, 19);
+            this.Alerts.Name = "Alerts";
+            this.Alerts.Size = new System.Drawing.Size(178, 304);
+            this.Alerts.TabIndex = 2;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 261);
+            this.ClientSize = new System.Drawing.Size(711, 344);
+            this.Controls.Add(this.Alerts);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form3";
             this.Text = "Form3";
@@ -57,5 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ListBox Alerts;
     }
 }

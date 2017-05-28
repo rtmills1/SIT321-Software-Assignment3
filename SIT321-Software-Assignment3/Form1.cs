@@ -53,7 +53,7 @@ namespace SIT321_Software_Assignment3
                 {
                     SIT321_Software_Assignment3.Menus.MenuSystem.GetMe(user);
                 }
-
+                
                 this.Visible = false;
 
                 UserManager.SaveDB(pwFile);

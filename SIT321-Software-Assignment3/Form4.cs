@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using SIT321_Software_Assignment3.Users;
+using SIT321_Software_Assignment3.Exceptions;
+using System.IO;
+using System.Reflection;
 using System.Windows.Forms;
 
 namespace SIT321_Software_Assignment3
@@ -15,6 +12,16 @@ namespace SIT321_Software_Assignment3
         public Form4()
         {
             InitializeComponent();
+        }
+
+        public void Welcome(User user)
+        {
+
+            string firstName = user.GivenName;
+            string lastName = user.FamilyName;
+
+            label2.Text = String.Format("Welcome {0} {1}", firstName, lastName);
+
         }
 
         private void label1_Click(object sender, EventArgs e)

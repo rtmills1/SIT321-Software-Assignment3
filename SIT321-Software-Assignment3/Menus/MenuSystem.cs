@@ -203,20 +203,25 @@ namespace SIT321_Software_Assignment3.Menus
         }
         #endregion
         #region Lecturer Main Menu
-        private static void GetLecturerMenu()
+        private static void GetLecturerMenu(User u)
         {
 
             Form4 d = new Form4();
-
+            
             d.Show();
+
+
+            d.Welcome(u);
         }
         #endregion
         #region Student Main Menu
-        private static void GetStudentMenu()
+        private static void GetStudentMenu(User u)
         {
             Form3 d = new Form3();
 
             d.Show();
+
+            d.Welcome(u);
         }
         #endregion
 
@@ -227,9 +232,9 @@ namespace SIT321_Software_Assignment3.Menus
             if (u is SIT321_Software_Assignment3.Users.Admin)
                 GetAdminMenu();
             else if (u is SIT321_Software_Assignment3.Users.Lecturer)
-                GetLecturerMenu();
+                GetLecturerMenu(u);
             else if (u is SIT321_Software_Assignment3.Users.Student)
-                 GetStudentMenu();
+                 GetStudentMenu(u);
 
         }
         #endregion
