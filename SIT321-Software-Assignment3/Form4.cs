@@ -28,5 +28,16 @@ namespace SIT321_Software_Assignment3
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SIT321_Software_Assignment3.Menus.MenuSystem.loginOpen();
+        }
     }
 }

@@ -10,56 +10,7 @@ namespace SIT321_Software_Assignment3.Menus
     {
         //Need to add more/an option(s) here for student and lecturer. The admin is already there
         //Currently all the users have the same privledges.
-        private static MenuOption GetMenuSelection(List<MenuOption> menuOptions, User currentUser)
-        {
-            MenuOption result = null;
-
-            string greeting = string.Format("Welcome {0}", currentUser);
-            Console.WriteLine(greeting);
-            Console.WriteLine(new string('=', greeting.Length));
-
-            bool valid = false;
-            string selectedOption = "";
-            while (valid == false)
-            {
-                Console.WriteLine("Please select from the following options:");
-                foreach (MenuOption opt in menuOptions)
-                {
-                    Console.WriteLine("\t{0}. {1}", opt.Option, opt.Description);
-                }
-                Console.Write("Please enter your selection: ");
-                selectedOption = Console.ReadLine().ToUpper();
-                result = menuOptions.Where(m => m.Option == selectedOption).SingleOrDefault<MenuOption>();
-                if (result != null)
-                    valid = true;
-                else
-                    Console.Error.WriteLine("Invalid option, please try again.");
-            }
-            Console.WriteLine();
-
-            return result;
-        }
-
-        public static void RunMenu(User currentUser, List<MenuOption> menu)
-        {
-            MenuOption opt;
-            ExtendedResult extResult = new ExtendedResult(ResultCode.None);
-
-            do
-            {
-                try
-                {
-                    opt = GetMenuSelection(menu, currentUser);
-                    opt.Handler(currentUser, out extResult);
-                    if (extResult.ResultCode == ResultCode.SubMenu)
-                        RunMenu(currentUser, extResult.SubMenu);
-                }
-                catch (SIT321_Software_Assignment3.Exceptions.EasyLibraryException ex)
-                {
-                    Console.Error.WriteLine("Error: {0}", ex.Message);
-                }
-            } while (extResult.ResultCode != ResultCode.Logout);
-        }
+  
 
         #region General Handler Functions
         
@@ -77,12 +28,6 @@ namespace SIT321_Software_Assignment3.Menus
         #region User Management Handlers
         private static void AddUserHandler(User usr, out ExtendedResult result)
         {
-            Console.WriteLine("Please select from the following types of user: ");
-            Console.WriteLine("\t1) Administrator");
-            Console.WriteLine("\t2) Lecturer");
-            Console.WriteLine("\t3) Student");
-            Console.WriteLine("\t0) Go back");
-            Console.Write("Selection: ");
 
             User newUsr = null;
             int selection;
@@ -176,22 +121,20 @@ namespace SIT321_Software_Assignment3.Menus
             result = new ExtendedResult(ResultCode.None);
         }
         #endregion
-        #region User Management Menu
-        public static void UserManagementMenu(User usr, out ExtendedResult result)
+        
+
+        #region Back to main Menu
+        public static void loginOpen()
         {
-            List<MenuOption> menu = new List<MenuOption>();
+            Form1 d = new Form1();
 
-            menu.Add(new MenuOption("A", "Add new user", AddUserHandler));
-            menu.Add(new MenuOption("F", "Find a user", FindUserHandler));
-            menu.Add(new MenuOption("S", "Search for a user", SearchUserHandler));
-            menu.Add(new MenuOption("R", "Remove a user", RemoveUserHandler));
-            menu.Add(new MenuOption("X", "Exit", LogoutHandler));
+            d.Show();
 
-            result = new ExtendedResult(ResultCode.SubMenu, menu);
+
         }
+
+
         #endregion
-
-
 
         #region Administrator Main Menu
         private static void GetAdminMenu()

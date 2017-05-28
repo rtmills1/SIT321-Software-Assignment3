@@ -26,5 +26,11 @@ namespace SIT321_Software_Assignment3
             label2.Text = String.Format("Welcome {0} {1}", firstName, lastName);
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            SIT321_Software_Assignment3.Menus.MenuSystem.loginOpen();
+        }
     }
 }

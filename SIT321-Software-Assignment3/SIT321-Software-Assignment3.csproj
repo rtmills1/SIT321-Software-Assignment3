@@ -109,8 +109,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\DataSources\SIT321_Software_Assignment3.Users.Admin.datasource" />
+    <None Include="Properties\DataSources\SIT321_Software_Assignment3.Users.Lecturer.datasource" />
+    <None Include="Properties\DataSources\SIT321_Software_Assignment3.Users.Student.datasource" />
     <None Include="Properties\DataSources\SIT321_Software_Assignment3.Users.User.datasource" />
+    <None Include="Properties\DataSources\SIT321_Software_Assignment3.Users.UserManager.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
