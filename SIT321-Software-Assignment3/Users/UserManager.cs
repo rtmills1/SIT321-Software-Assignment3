@@ -11,7 +11,7 @@ namespace SIT321_Software_Assignment3.Users
     {
         private delegate User UserCreationHandler(string[] elements);
 
-        private static List<User> _UserList = new List<User>();
+        public static List<User> _UserList = new List<User>();
         public static void Add(User user)
         {
             if (Find(user.Login) != null)

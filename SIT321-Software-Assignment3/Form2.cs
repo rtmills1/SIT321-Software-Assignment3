@@ -12,6 +12,7 @@ namespace SIT321_Software_Assignment3
         public Form2()
         {
             InitializeComponent();
+            preload();
         }
 
         public void dataGridView1()
@@ -32,29 +33,26 @@ namespace SIT321_Software_Assignment3
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int i = 0;
-
-            User u;
-            string Firstname = u.FamilyName.ToString();
-
             
-            //ListViewItem lvi = new ListViewItem("adsfafds");
-            //foreach (User u in UserManager.getusers())
-            //{
-            //    if (i == 0)
-            //    {
-            //        lvi = new ListViewItem(u.ToString());
-            //        i++;
-            //    }
-            //    else
-            //    lvi.SubItems.Add(u.ToString());
 
+        }
 
-                
-            //}
+        public void preload()
+        {
 
-            
-            listView1.Items.Add(lvi);
+            ListViewItem lvi = new ListViewItem("Garbage");
+            foreach (User u in UserManager._UserList)
+            {
+
+                lvi = new ListViewItem(u.Title.ToString());
+
+                lvi.SubItems.Add(u.GivenName.ToString());
+                lvi.SubItems.Add(u.FamilyName.ToString());
+                lvi.SubItems.Add(u.Login.ToString());
+                lvi.SubItems.Add(u.Password.ToString());
+
+                listView1.Items.Add(lvi);
+            }
 
         }
     }

@@ -173,11 +173,13 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Width = 93;
+            this.columnHeader1.Text = "UserName";
+            this.columnHeader1.Width = 106;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Width = 83;
+            this.columnHeader2.Text = "Password";
+            this.columnHeader2.Width = 90;
             // 
             // Form2
             // 
